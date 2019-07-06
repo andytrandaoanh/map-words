@@ -10,11 +10,15 @@ def matchWordToSent(wordList, sentList, bookID):
 		for item in sentList:
 			sentText = item[0]
 			sentID = item[1]
-			pattern = re.compile(r'\b%s\b' % word, re.I)
-			matchObj = pattern.search(sentText)
-			if (matchObj):
-				results.append((word, sentID))
-				print(matchObj)
+			reWord = re.escape(word)
+			pattern = re.compile(r'\b%s\b' % reWord, re.I)
+			try:
+				matchObj = pattern.search(sentText)
+				if (matchObj):
+					results.append((word, sentID))
+					print(matchObj)
+			except:
+				print('Some error occurred')
 	return results
 
 

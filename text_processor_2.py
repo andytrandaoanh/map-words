@@ -16,8 +16,14 @@ def processText(inFile, outDir):
 	
 	matches = sH.readTextFile(inFile)
 	listMatch = matches.split("\n")
-	#result = list( dict.fromkeys(result))
-	listMatch = list( dict.fromkeys(listMatch))
+	cleanList = []
+	for item in listMatch:
+		parts = item.split(",")
+		if(parts[0].strip()):
+			cleanList.append(item)
+
+	
+	listMatch = list( dict.fromkeys(cleanList))
 	
 	sH.writeListToFile(listMatch, outFilePath)
 	#print(listMatch)

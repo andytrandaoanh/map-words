@@ -28,7 +28,7 @@ def processText(bookID, outDir):
 	outPath = sysHand.getNormalPath(bookID, outDir)
 	#print('outPath:', outPath)	
 	
-	wordList = sqlData.getWordList()
+	wordList = sqlData.getWordList(bookID)
 	wordList.sort()	
 	sentList = sqlData.getSentences(bookID)
 	matchList = matchWordToSent(wordList, sentList, bookID)

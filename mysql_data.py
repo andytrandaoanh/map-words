@@ -47,11 +47,11 @@ def formatWordList(records):
 		wordList.append(word[0])	
 	return wordList
 
-def getWordList():
+def getWordList(bookID):
 	DB_NAME = "lexicon"
 	db = get_connection(DB_NAME)
 	cursor = db.cursor()
-	select_sql= ("select word_form from pure_words order by 1;")
+	select_sql= ("select word_form from words where book_id =" + str(bookID))
 	try:
 		cursor.execute(select_sql)
 		records = cursor.fetchall()

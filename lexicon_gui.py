@@ -129,7 +129,7 @@ class LexGUI:
 
 
     def fileDialog2(self):
-        self.filename21 = filedialog.askopenfilename(initialdir = "E:/FULLTEXT/MAPPINGS", title = "Select a file", filetypes = (("Text files", "*.txt"),  ("all files", "*.*")))
+        self.filename21 = filedialog.askopenfilename(initialdir = "E:/FULLTEXT/MAP/MAPPINGS", title = "Select a file", filetypes = (("Text files", "*.txt"),  ("all files", "*.*")))
         if (self.filename21):
             self.filepath21.set(self.filename21) #set the textbox to the file path
             #self.button2.config(state = "normal")
